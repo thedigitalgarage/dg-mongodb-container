@@ -1,8 +1,7 @@
 MongoDB Docker image
 ====================
 
-This repository contains Dockerfiles for MongoDB images for general usage and OpenShift.
-Users can choose between RHEL and CentOS based images.
+This this is a CentOS 7 based MongoDB image for use on the Digital Garage.
 
 **Notice: This image is supported only for upgrade from MongoDB 2.6 to 3.2.**
 
@@ -43,12 +42,12 @@ matches the user UID or name which is running inside the container.**
 Usage
 ---------------------------------
 
-For this, we will assume that you are using the `centos/mongodb-26-centos7` image.
+For this, we will assume that you are using the `thedigitalgarage/mongodb-26-centos7` image.
 If you want to set only the mandatory environment variables and store the database
 in the `/home/user/database` directory on the host filesystem, execute the following command:
 
 ```
-$ docker run -d -e MONGODB_USER=<user> -e MONGODB_PASSWORD=<password> -e MONGODB_DATABASE=<database> -e MONGODB_ADMIN_PASSWORD=<admin_password> -v /home/user/database:/var/lib/mongodb/data centos/mongodb-26-centos7
+$ docker run -d -e MONGODB_USER=<user> -e MONGODB_PASSWORD=<password> -e MONGODB_DATABASE=<database> -e MONGODB_ADMIN_PASSWORD=<admin_password> -v /home/user/database:/var/lib/mongodb/data thedigitalgarage/mongodb-26-centos7
 ```
 
 If you are initializing the database and it's the first time you are using the
